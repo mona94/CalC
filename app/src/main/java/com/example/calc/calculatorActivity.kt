@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -174,7 +175,15 @@ class calculatorActivity : AppCompatActivity() {
                     isJustCalculated = true
                 } else if (operatorValue.contains("÷")) {
                     Log.e(TAG, "inside ÷ ")
-                    Toast.makeText(this, "Cann't divide by zero", Toast.LENGTH_SHORT).show()
+                    val mToast = Toast(this)
+                    val view = TextView(this).apply { text = "Cann't divide by zero"
+                    setTextColor(resources.getColor(R.color.white))
+                        setBackgroundColor(resources.getColor(R.color.dark_green))
+                        setPadding(32,16,32,16)
+                    }
+                    mToast.duration = Toast.LENGTH_SHORT
+                    mToast.view = view
+                    mToast.show()
                     resetAll()
                 }
             } else {
