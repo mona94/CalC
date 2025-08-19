@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/rippleColor"> <!-- Ripple color -->
+    <item android:id="@android:id/mask">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/white" /> <!-- Button background -->
+            <!-- The <size> tag here will be overridden by the Button's layout_width/height -->
+            <!-- So it's not strictly necessary if the Button defines its own dimensions. -->
+            <!-- <size android:height="100dp" android:width="100dp"/> -->
+        </shape>
+    </item>
+</ripple>
